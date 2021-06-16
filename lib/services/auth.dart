@@ -1,8 +1,9 @@
 import 'package:brew/models/myUser.dart';
 import 'package:brew/services/database.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 
-class AuthService {
+class AuthService with ChangeNotifier {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   MyUser? _myUserFromFireBaseUser([User? user]) {
