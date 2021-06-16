@@ -1,7 +1,5 @@
 import 'package:brew/services/database.dart';
 import 'package:flutter/material.dart';
-// import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:provider/provider.dart';
 
 class BrewList extends StatefulWidget {
   const BrewList({Key? key}) : super(key: key);
@@ -13,9 +11,6 @@ class BrewList extends StatefulWidget {
 class _BrewListState extends State<BrewList> {
   @override
   Widget build(BuildContext context) {
-    final databaseService = context.read<DatabaseService>();
-
-    print(databaseService);
     return Container();
   }
 }

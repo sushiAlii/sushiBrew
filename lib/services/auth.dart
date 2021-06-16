@@ -6,19 +6,14 @@ import 'package:flutter/cupertino.dart';
 class AuthService with ChangeNotifier {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
+  User? get user => _auth.currentUser;
+
   MyUser? _myUserFromFireBaseUser([User? user]) {
     return user != null ? MyUser(uid: user.uid) : null;
   }
 
   //  PLAN B
   bool get hasUser => FirebaseAuth.instance.currentUser != null;
-
-  //  Auth  Change User Stream
-  Stream<MyUser?> get user {
-    return _auth
-        .authStateChanges()
-        .map((User? user) => _myUserFromFireBaseUser(user));
-  }
 
   //  Sign in as ANONYMOUS
   Future signInAnon() async {
