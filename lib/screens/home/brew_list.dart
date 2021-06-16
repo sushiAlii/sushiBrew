@@ -12,8 +12,6 @@ class BrewList extends StatefulWidget {
 class _BrewListState extends State<BrewList> {
   @override
   Widget build(BuildContext context) {
-    final brews = Provider.of<QuerySnapshot>(context);
-    print(brews);
     return Container();
   }
 }

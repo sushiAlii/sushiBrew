@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/cupertino.dart';
 
-class DatabaseService {
+class DatabaseService with ChangeNotifier {
   final String? uid;
 
   DatabaseService({this.uid});
