@@ -1,9 +1,12 @@
 import 'package:brew/models/myUser.dart';
 import 'package:brew/services/database.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 
-class AuthService {
+class AuthService with ChangeNotifier {
   final FirebaseAuth _auth = FirebaseAuth.instance;
+
+  User? get user => _auth.currentUser;
 
   MyUser? _myUserFromFireBaseUser([User? user]) {
     return user != null ? MyUser(uid: user.uid) : null;
@@ -11,13 +14,6 @@ class AuthService {
 
   //  PLAN B
   bool get hasUser => FirebaseAuth.instance.currentUser != null;
-
-  //  Auth  Change User Stream
-  Stream<MyUser?> get user {
-    return _auth
-        .authStateChanges()
-        .map((User? user) => _myUserFromFireBaseUser(user));
-  }
 
   //  Sign in as ANONYMOUS
   Future signInAnon() async {

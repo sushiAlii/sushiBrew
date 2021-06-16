@@ -12,27 +12,24 @@ import 'package:brew/services/database.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(MyApp());
+  runApp(MultiProvider(
+    providers: [
+      ChangeNotifierProvider(create: (_) => AuthService()),
+      ChangeNotifierProvider(create: (_) => DatabaseService()),
+    ],
+    child: const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({
+    Key? key,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        StreamProvider<MyUser?>.value(
-          value: AuthService().user,
-          initialData: null,
-        ),
-        StreamProvider<QuerySnapshot?>.value(
-          initialData: null,
-          value: DatabaseService().brews,
-          builder: (context, child) => BrewList(),
-        )
-      ],
-      child: MaterialApp(
-        home: Wrapper(),
-      ),
+    return MaterialApp(
+      home: Wrapper(),
     );
   }
 }
