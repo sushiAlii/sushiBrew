@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "998009273556",
+    "project_id": "sushi-brew",
+    "storage_bucket": "sushi-brew.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:998009273556:android:5b262f4bebbed540f04f41",
+        "android_client_info": {
+          "package_name": "com.sushi.brew"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "998009273556-hgr4fs02hu71h3ap2e9tompdctcb308p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNEzq5gzhZhuXk9OBROrlxd-MGRm95Xd8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "998009273556-hgr4fs02hu71h3ap2e9tompdctcb308p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
