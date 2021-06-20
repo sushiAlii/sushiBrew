@@ -98,6 +98,8 @@ class _SignInState extends State<SignIn> {
                               error = 'Please check your Email and Password';
                               loading = false;
                             });
+                          } else {
+                            // Navigator.pushNamed(context, '/home');
                           }
                         }
                         print(email);

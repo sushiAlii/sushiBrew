@@ -6,7 +6,16 @@ import 'package:flutter/cupertino.dart';
 class AuthService with ChangeNotifier {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
-  User? get user => _auth.currentUser;
+  //  USER GETTERS
+
+  //  GETTER 1
+  //User? get user => _auth.currentUser;
+
+  //  GETTER 2
+  Stream<MyUser?> get user {
+    return _auth.authStateChanges().map(_myUserFromFireBaseUser);
+    // .map((User? user) => _myUserFromFireBaseUser(user));
+  }
 
   MyUser? _myUserFromFireBaseUser([User? user]) {
     return user != null ? MyUser(uid: user.uid) : null;

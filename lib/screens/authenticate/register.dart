@@ -98,6 +98,8 @@ class _RegisterState extends State<Register> {
                               error = 'Please Supply a valid Email Address.';
                               loading = false;
                             });
+                          } else {
+                            // Navigator.pushNamed(context, '/home');
                           }
                           print(email);
                           print(password);
